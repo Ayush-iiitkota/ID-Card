@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+            border: 2px solid black;
+            padding:20px;
+        }
+
+        #login-container {
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: #1a7f1e;
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        button:hover {
+            background-color: #0e5f12;
+        }
+    </style>
+</head>
+<body>
+    
+
+<div id="login-container">
+    <h2>Login</h2>
+    <form>
+        <input type="text" id="username" placeholder="Username hint:(example)" required>
+        <input type="password" id="password" placeholder="Password hint:(password)" required>
+                    <label for="111">Student</label>
+                    <input type="radio" id="111" class="" name="btn">
+
+                    <label for="112">School</label>
+                    <input type="radio" id="112" name="btn" class="">
+                    
+                    <label for="113">Vendor</label>
+                    <input type="radio" id="113" name="btn" class="">
+                    <button type="button" onclick="performLogin()">Login</button>
+                    
+    </form>
+</div>
+
+<script>
+    function performLogin() {
+        const username = document.getElementById('username').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        // Replace this with your secure authentication logic
+        if (username === 'example' && password === 'password') {
+            // Redirect to another page
+            window.location.href = 'index.html';
+        } else {
+            alert('Invalid username or password. Please try again.');
+        }
+    }
+</script>
+
+</body>
+</html>

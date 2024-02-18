@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtual ID-Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            /* max-width: 400px; */
+            margin: 50px auto;
+            padding: 20px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"] {
+            width: 80%;
+            padding: 8px;
+            margin: 0px 60px;
+            margin: 10px auto;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #07151f;
+            color: white;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        #output {
+            margin-top: 1px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        .container {
+            max-width: 300px;
+            margin: 40px auto;
+        }
+
+        .content{
+            margin: 10px;
+            border: 2px solid black;
+        }
+
+        img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            /* padding-left: 40px; */
+            margin-left: 25px;
+        }
+
+        input[type="file"] {
+            display: none;
+        }
+
+        label {
+            padding: 10px 15px;
+            background-color: #032f4d;
+            color: white;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        img {
+            border: 2px solid black;
+        }
+
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- for medium and large devices -->
+    <div class=" mx-auto w-4/5 sm:container sm:block sm:h-3/4 sm:w-4/5 sm:mx-auto sm:p-10">
+        <h1 class="text-2xl mb-6 md:text-3xl mt-4 lg:text-3xl lg:text-center">Fill Your Information</h1>
+        <label for="name" class=" w-4/5 sm:w-4/5">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="class" class=" w-4/5 sm:w-4/5">Class:</label>
+        <input type="text" id="class" placeholder="Enter your class">
+
+        <label for="father" class=" w-4/5 sm:w-4/5">Father's Name:</label>
+        <input type="text" id="father" placeholder="Enter your father's name">
+
+        <label for="phone" class=" w-4/5 sm:w-4/5">Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter your phone number">
+
+        <label for="address" class=" w-4/5 sm:w-4/5">Address:</label>
+        <input type="text" id="address" placeholder="Enter your address">
+        <br>
+
+        <button class="bg-black text-white mx-auto text-center mt-4 mb-4 md:ml-6 h-9 w-32 rounded ml-10"
+            onclick="generateText()">Generate Text</button>
+        <div class="md:flex">
+            <div id="output" class="left w-11/12 sm:w-4/5 sm:h-48 p-2 lg:h-60 lg:p-4 mb-4 pb-5 sm:mb-5 sm:p-4 h-40 mx-auto" >
+            </div>
+
+
+            <div class="contain border-2 border-black mx-auto text-center sm:ml-10 right sm:w-56 md:w-72 sm:mt-10 md:mt-0">
+                <h1 class="text-2xl text-center lg:mt-5 sm:mt-3">Profile Photo</h1>
+                <img id="profile-photo" src="image.jpg" class="text-center sm:ml-14 mt-5 border-1 border-black mx-auto" alt="Profile Photo">
+                <br>
+                <label class="w-36 mx-auto sm:ml-8" for="file-upload">Upload Photo</label>
+                <input type="file" id="file-upload" accept="image/*" onchange="changeProfilePhoto(event)">
+            </div>
+        </div>
+        <button class="h-8 p-1  ml-8 w-24 mb-5 mt-10 mx-auto bg-blue-950 hover:bg-blue-800 text-white text-center"><a href="submitted.html">Submit</a></button>
+    </div>
+
+
+
+
+
+
+
+    <!-- for smaller devices  -->
+    <!-- <div class="container sm:block h-3/4 w-1/2 p-10">
+        <h1 class="text-2xl mb-4 lg:text-3xl">Fill Your Information</h1>
+        <label for="name" class="md:w-4/5">Name:</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="class" class="md:w-4/5">Class:</label>
+        <input type="text" id="class" placeholder="Enter your class">
+
+        <label for="father" class="md:w-4/5">Father's Name:</label>
+        <input type="text" id="father" placeholder="Enter your father's name">
+
+        <label for="phone" class="md:w-4/5">Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter your phone number">
+
+        <label for="address" class="md:w-4/5">Address:</label>
+        <input type="text" id="address" placeholder="Enter your address">
+        <br>
+
+        <button class="bg-black text-white text-center mt-4 mb-4 md:ml-6 h-9 w-32 rounded ml-10"
+            onclick="generateText()">Generate Text</button>
+        <div class="md:flex">
+            <div id="output" class="left w-4/5 p-1">
+            </div>
+            <div class="contain right md:w-60">
+                <h1 class="text-2xl text-center">Profile Photo</h1>
+                <img id="profile-photo" src="image.jpg" class="text-center ml-14 mt-5" alt="Profile Photo">
+                <br>
+                <label class="w-36 ml-8" for="file-upload">Upload Photo</label>
+                <input type="file" id="file-upload" accept="image/*" onchange="changeProfilePhoto(event)">
+            </div>
+        </div>
+        <button class="h-8 p-1 w-20 mt-10 bg-blue-950 text-white text-center"><a href="submitted.html">Submit</a></button>
+    </div> -->
+
+
+
+
+    <!-- for smaller devices  -->
+    <!-- <div class="container sm:hidden">
+        <h1 class="text-2xl mb-4 lg:text-3xl">Fill Your Information</h1>
+        <label for="name" class="md:w-4/5">Nam</label>
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <label for="class" class="md:w-4/5">Class:</label>
+        <input type="text" id="class" placeholder="Enter your class">
+
+        <label for="father" class="md:w-4/5">Father's Name:</label>
+        <input type="text" id="father" placeholder="Enter your father's name">
+
+        <label for="phone" class="md:w-4/5">Phone Number:</label>
+        <input type="text" id="phone" placeholder="Enter your phone number">
+
+        <label for="address" class="md:w-4/5">Address:</label>
+        <input type="text" id="address" placeholder="Enter your address">
+        <br>
+
+        <button class="bg-black text-white text-center mt-4 mb-4 md:ml-6 h-9 w-32 rounded ml-10"
+            onclick="generateText()">Generate Text</button>
+        <div class="md:flex">
+            <div id="output" class="left w-4/5 p-1">
+            </div>
+            <div class="contain right md:w-60">
+                <h1 class="text-2xl text-center">Profile Photo</h1>
+                <img id="profile-photo" src="image.jpg" class="text-center ml-14 mt-5" alt="Profile Photo">
+                <br>
+                <label class="w-36 ml-8" for="file-upload">Upload Photo</label>
+                <input type="file" id="file-upload" accept="image/*" onchange="changeProfilePhoto(event)">
+            </div>
+        </div>
+        <button class="h-8 p-1 w-20 mt-10 bg-blue-950 text-white text-center"><a href="submitted.html">Submit</a></button>
+    </div> -->
+
+
+    <script>
+
+        function changeProfilePhoto(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    document.getElementById('profile-photo').src = e.target.result;
+                };
+                reader.readAsDataURL(file);
+            }
+        }
+
+
+        function generateText() {
+            const name = document.getElementById('name').value;
+            const classValue = document.getElementById('class').value;
+            const father = document.getElementById('father').value;
+            const phone = document.getElementById('phone').value;
+            const address = document.getElementById('address').value;
+
+            const output = `
+            <p><strong>Name:</strong> ${name}</p>
+            <p><strong>Class:</strong> ${classValue}</p>
+            <p><strong>Father's Name:</strong> ${father}</p>
+            <p><strong>Phone No.:</strong> ${phone}</p>
+            <p><strong>Address:</strong> ${address}</p>
+        `;
+
+            document.getElementById('output').innerHTML = output;
+        }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+</body>
+
+</html>

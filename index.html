@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="input.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <title>Acessory Tak</title>
+    <style>
+
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+        }
+
+        .card {
+            max-width: 600px;
+            margin: 10px auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #fff;
+            color: #333;
+        }
+
+        .card p {
+            margin: 0 0 10px 0;
+        }
+
+        .card-heading {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .card-content {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        @media screen and (max-width: 600px) {
+            .card {
+                padding: 10px;
+            }
+        }
+        .section {
+        max-width: 800px;
+        margin: 50px auto;
+        padding: 20px;
+        background-color: #ffffffa3;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-heading {
+        font-size: 24px;
+        font-weight: bold;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .section-content {
+        font-size: 18px;
+        line-height: 1.6;
+        color: #333;
+    }
+
+    @media screen and (max-width: 600px) {
+        .section {
+            padding: 10px;
+        }
+    }
+    .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #333;
+        color: white;
+        padding: 10px 20px;
+    }
+
+    .hamburger-menu {
+        display: none;
+        flex-direction: column;
+        justify-content: space-around;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 100%;
+        height: 3px;
+        background-color: white;
+    }
+
+    .side-panel {
+        display: flex;
+        flex-direction: column;
+        background-color: #333;
+        position: fixed;
+        top: 0;
+        left: -250px;
+        width: 250px;
+        height: 100%;
+        padding-top: 60px;
+        transition: left 0.3s;
+    }
+
+    .side-panel a {
+        padding: 10px 20px;
+        color: white;
+        text-decoration: none;
+    }
+
+    .side-panel a:hover {
+        background-color: #555;
+    }
+
+    @media screen and (max-width: 768px) {
+        .hamburger-menu {
+            display: flex;
+        }
+
+        .side-panel {
+            left: -250px;
+        }
+
+        .side-panel.active {
+            left: 0;
+        }
+    }
+    </style>
+
+</head>
+
+<body>
+    <main>
+        <!-- for small devices -->
+        <div class="nav_bar h-10 bg-purple-950 w-screen p-1 flex justify-between items-center md:hidden mb-3">
+            <div class="left flex gap-4">
+                <div class="bars">
+                    <i class="fa-solid fa-bars fa-lg" style="color: #ffffff;"></i>
+                </div>
+
+            </div>
+            <!-- <div class="navbar">
+                <div class="hamburger-menu" onclick="toggleSidePanel()">
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                    <div class="bar"></div>
+                </div>
+                <div class="side-panel" id="sidePanel">
+                    <a href="#">Home</a>
+                    <a href="#">About</a>
+                    <a href="#">Contact</a>
+                </div>
+            </div> -->
+            <div class="center logo">
+                <h1 class="text-white">AccessoryTak</h1>
+            </div>
+
+
+            <div class="right flex gap-4">
+                <div class="login">
+                    <button><a href="login_page.html"><i class="fa-solid fa-user-plus fa-lg" style="color: #ffffff;"></i></a></button>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- for medium and large devices -->
+        <div class="hidden navbar2 bg-purple-950 md:flex w-screen justify-between items-center h-14 p-8 mb-2">
+            <div class="left logo">
+                <h1 class="text-white text-2xl hover:text-[26px]">AccesoryTak</h1>
+            </div>
+            <div class="left flex gap-10 items-center">
+                <div class="link1 text-white hover:underline"><a href="#Vision">Vision</a></div>
+                <div class="link2 text-white hover:underline"><a href="#About">About</a></div>
+                <div class="link3 text-white hover:underline"><a href="#Contact">Contact Us</a></div>
+                <div class="link4 text-white hover:underline"><a href="#">Order</a></div>
+            </div>
+            <div class="right flex gap-5">
+                <!-- <div class="searchBox">
+                    <input type="search" placeholder="Search Your Templates" class="rounded-sm placeholder:p-2 placeholder:text-gray-700 h-7">
+                </div> -->
+                <div class="button">
+                    <button class="bg-blue-800 text-white h-7 w-20 hover:bg-blue-900 rounded-sm"><a
+                            href="login_page.html">Login</a></button>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="outer flex justify-center items-center md:hidden mb-4">
+            <div
+                class="inner flex justify-center items-center h-16 w-11/12 border-black border-2 rounded-md bg-[#F9F6EE]">
+                <h1 class="font-sans text-[17px] font-semibold">Want To Design Your Own ID-Card?</h1>
+            </div>
+        </div>
+
+
+        <div class=" md:hidden image flex justify-center items-center mb-3">
+            <img src="Id-card.jpg" alt="#" class="h-60">
+        </div>
+        <div class="Create mt-2 w-4/5 mx-auto p-7 h-3/4 bg-[#FFF5EE] border-2 border-black rounded-2xl md:hidden">
+            <h1 class=" font-sans text-[22px] font-semibold mb-2">Create Your ID Card</h1>
+            <p class="text-[18px] font-sans">Flexible Solution For Your School ID-Cards <br>
+                Place Your Order With School Reference ID </p>
+        </div>
+        <div class="button md:hidden">
+            <center>
+                <button class="h-10 w-36 mt-5 hover:bg-violet-900 bg-violet-950 text-white rounded"><a
+                        href="data_updater.html">Generate ID-Card</a></button>
+            </center>
+        </div>
+
+
+        <!-- body for medium and large devices -->
+
+        <div class="outer justify-center items-center hidden md:flex mb-3">
+            <div
+                class="inner flex justify-center items-center h-16 w-5/6 border-black border-2 rounded-md bg-[#F9F6EE]">
+                <h1 class="font-sans text-[17px] font-semibold">Want To Design Your Own ID-Card?</h1>
+            </div>
+        </div>
+
+
+        <div
+            class="content hidden md:flex h-[50%] w-11/12 bg-gradient-to-r from-purple-500 to-pink-500 p-10 justify-center border-2 border-black rounded-md mx-auto">
+            <div class="left data pr-7">
+                <h1 class="text-[26px] font-sans mb-4">Flexible Solution For Your School ID Card</h1>
+                <p class="text-[20px]">Place your order with Your School Reference ID
+                    and Fill Your Information to get your ID-Card as soon as possible!
+                </p>
+                <button class="bg-blue-800 rounded-sm hover:bg-blue-900 mt-7 h-8 w-28 text-white"><a href="#Virtual">Explore more</a></button>
+
+            </div>
+            <div class="right">
+                <img src="id-removebg-preview.png" alt="ID Card" height="300px" width="300px">
+            </div>
+        </div>
+        <div class="button hidden md:block">
+            <center>
+                <button class="h-10 hover:bg-violet-900 w-36 mt-5 bg-violet-950 text-white rounded"><a
+                        href="data_updater.html">Generate ID-Card</a></button>
+            </center>
+        </div>
+        <br>
+        <hr>
+        <h1 class="text-2xl text-center mt-8 mb-8" id="About">About</h1>
+        <div class="card">
+            <div class="card-heading">Welcome to ACCESSORYTAK</div>
+            <div class="card-content">
+                <p>Where we revolutionize the way you create and customize ID cards and accessories.</p>
+                <p>Our platform offers a seamless experience for individuals and businesses alike, providing instant
+                    virtual ID card creation with a myriad of customization options.</p>
+            </div>
+        </div>
+
+        <hr><br>
+        <hr>
+        <h1 class="text-2xl text-center mt-4" id="Vision">Our Vision</h1>
+        <div class="sec mx-auto mt-9 flex justify-center bg-[url'data.PNG'] bg-contain h-full">
+            <img src="data.PNG" alt="image" class="h-[10%]">
+            <br>
+        </div>
+        <br>
+        <hr>
+
+
+
+
+        <div class="section mb-8">
+            <div class="section-heading" id="Virtual">Virtual ID Card</div>
+            <div class="section-content">
+                <p>In today's world, identity is key.
+                    Whether it's for personal
+                    identification, professional use, or
+                    events, having a unique and
+                    customizable ID card is essential.</p>
+                <p>Traditional methods of ID card
+                creation often lack flexibility and
+                creativity. Our platform addresses
+                this need by empowering users to
+                design their ID cards exactly how
+                they envision them.
+                </p>
+            </div>
+            <br><hr><br>
+
+
+
+
+        <h1 class="text-2xl text-center mt-4" id="Friendly"><b>User Friendly Interface:</b></h1>
+        <div class="section">
+            <div class="section-heading">Our Website Features</div>
+            <div class="section-content">
+                <p>Our website has a user-friendly interface designed for ease of navigation and seamless customization.</p>
+                <p>Whether you're a tech-savvy individual or new to online design tools, creating the perfect ID card is intuitive and hassle-free.</p>
+            </div>
+            <br><hr><br>
+
+
+            <!-- <h1 class="text-2xl text-center mt-4 mb-4">Conclusion</h1> -->
+            <div class="section" id="Conclusion">
+                <div class="section-heading">Conclusion</div>
+                <div class="section-content">
+                    <p>In conclusion, ACCESSORYTAK is your ultimate
+                        destination for personalized ID cards and
+                        accessories.</p>
+                    <p> With our easy-to-use platform,
+                        extensive customization options, and instant
+                        virtual card generation, creating professional and
+                        unique ID cards has never been easier. Join us
+                        today and experience the future of ID card design</p>
+                </div>
+            <br><hr><br>
+
+        <section class="text-gray-600 body-font relative">
+            <div class="container px-5 py-24 mx-auto">
+                <div class="flex flex-col text-center w-full mb-12">
+                    <h1 class="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900" id="Contact">Contact Us</h1>
+                    <p class="lg:w-2/3 mx-auto leading-relaxed text-base">You can Contact Us by filling the form given below</p>
+                </div>
+                <div class="lg:w-1/2 md:w-2/3 mx-auto">
+                    <div class="flex flex-wrap -m-2">
+                        <div class="p-2 w-1/2">
+                            <div class="relative">
+                                <label for="name" class="leading-7 text-sm text-gray-600">Name</label>
+                                <input type="text" id="name" name="name"
+                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            </div>
+                        </div>
+                        <div class="p-2 w-1/2">
+                            <div class="relative">
+                                <label for="email" class="leading-7 text-sm text-gray-600">Your Email ID</label>
+                                <input type="email" id="email" name="email"
+                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            </div>
+                        </div>
+                        <div class="p-2 w-full">
+                            <div class="relative">
+                                <label for="message" class="leading-7 text-sm text-gray-600">Message</label>
+                                <textarea id="message" name="message"
+                                    class="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"></textarea>
+                            </div>
+                        </div>
+                        <div class="p-2 w-full">
+                            <button
+                                class="flex mx-auto text-white bg-indigo-700 border-0 py-2 px-8 focus:outline-none hover:bg-violet-900 rounded text-lg"><a href="contact.html">Contact</a></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div class="w-full  text-center bg-violet-950 text-white">
+            <h3 class="md:text-2xl text-[16px]">Team: Tech Web Titan</h3>
+        </div>
+
+    </main>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script src="script.js">
+         function toggleSidePanel() {
+        const sidePanel = document.getElementById('sidePanel');
+        sidePanel.classList.toggle('active');
+    } -->
+    </script>
+
+
+</body>
+
+</html>
