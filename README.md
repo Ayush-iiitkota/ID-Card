@@ -4,10 +4,12 @@ Team Name: Tech Web Titan
 <br><br>
 Team Members: Ayush Singh, Rishab Yadav, Harsh Vardhan Singh, Amit Rathore
 <br><br>
-Setting Our Project:   You Can Open Our Website Via link Provided to you 
+Setting Our Project:
+You Can Open Our Website Via link Provided to you 
 or You Can open ID-Card Repositry and can open Settings option given on top and after that page option on the left and then you can see the link for our Website So You Can Open it From There. 
 <br><br>
-Describing Our Project:   We have created a website in which user can fill its information and can generate his Virtual ID Card within Few Minutes, It gives the control to User to Fill his Information Correctly and Upload his Best Photograph in which he looks Nice.
+Describing Our Project:
+We have created a website in which user can fill its information and can generate his Virtual ID Card within Few Minutes, It gives the control to User to Fill his Information Correctly and Upload his Best Photograph in which he looks Nice.
 <br><br>
 ID-Cards are Used in Almost Every Sector Like in Schools for Childrens and Staff, In Companies and Banks for employees ,etc.
 <br><br>
